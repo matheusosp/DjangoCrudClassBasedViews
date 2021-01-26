@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
@@ -11,3 +12,9 @@ class IndexView(ListView):
     queryset = Product.objects.all()
     context_object_name = 'products'
 
+
+class CreateProductView(CreateView):
+    model = Product
+    template_name = 'product_form.html'
+    fields = ['name', 'price']
+    success_url = reverse_lazy('index')

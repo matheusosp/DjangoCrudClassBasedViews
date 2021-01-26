@@ -19,8 +19,7 @@
                         <td>{{ produto.name }}</td>
                         <td>R$ {{ produto.price|intcomma }}</td>
                         <td>
-                            <a class="btn btn-warning" href="{% url 'upd_produto' produto.pk %}">Editar</a>
-                            <a class="btn btn-danger" href="{% url 'del_produto' produto.pk %}">Deletar</a>
+
                         </td>
                     </tr>
                 {% endfor %}
