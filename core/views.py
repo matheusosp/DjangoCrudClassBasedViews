@@ -18,3 +18,17 @@ class CreateProductView(CreateView):
     template_name = 'product_form.html'
     fields = ['name', 'price']
     success_url = reverse_lazy('index')
+
+
+class UpdateProductView(UpdateView):
+    model = Product
+    template_name = 'product_form.html'
+    fields = ['name', 'price']
+    success_url = reverse_lazy('index')
+
+
+class DeleteProductView(DeleteView):
+    model = Product
+    template_name = 'product_del.html'
+    success_url = reverse_lazy('index')
+
