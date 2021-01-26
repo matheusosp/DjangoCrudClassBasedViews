@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for produto in products %}
+                {% for produto in page_obj %}
                     <tr>
                         <td>{{ produto.id }}</td>
                         <td>{{ produto.name }}</td>
@@ -21,10 +21,11 @@
                         <td>
                             <a class="btn btn-warning" href="{% url 'upd_product' produto.pk %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'del_product' produto.pk %}">Deletar</a>
-                        </td>
+'                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
-        </table>
+        </table>'
+        {% include 'paginacao.html' %}
     </div>
 {% endblock %}

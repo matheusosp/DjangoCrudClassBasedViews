@@ -9,6 +9,8 @@ from .forms import ProductModelForm
 class IndexView(ListView):
     models = Product
     template_name = 'index.html'
+    paginate_by = 5
+    ordering = 'id'
     queryset = Product.objects.all()
     context_object_name = 'products'
 
